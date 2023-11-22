@@ -1,18 +1,17 @@
 package HashSet;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class TwoSum {
     public int[] twoSumNumber(int[] nums, int k){
         Set<Integer> setNums = new HashSet<>();
-        for (int i=0; i < nums.length; i++) {
-            int numberToFind = k - nums[i];
+        for (int num : nums) {
+            int numberToFind = k - num;
             if (setNums.contains(numberToFind)) {
-                return new int[]{numberToFind, nums[i]};
+                return new int[]{numberToFind, num};
             }
-            setNums.add(nums[i]);
+            setNums.add(num);
         }
         return new int[0];
     }
